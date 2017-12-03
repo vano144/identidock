@@ -2,7 +2,7 @@ FROM debian
 
 RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
 RUN apt-get update && apt-get install -y curl python3 python3-dev python3-pip
-RUN pip3 install Flask==0.10.1 uWSGI==2.0.8 requests==2.5.1 redis
+RUN pip3 install Flask uWSGI requests redis
 WORKDIR /app
 COPY app /app
 COPY cmd.sh /
